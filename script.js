@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var btnReferencias = document.getElementById('btn-referencias');
+
+if (btnReferencias) {
+  btnReferencias.addEventListener('click', function () {
+    openFromDataLink(btnReferencias);
+  });
+}
   // colocar y dimensionar el panel para que aparezca a la izquierda del botón de búsqueda
   function positionPanelLeftOfButton() {
     if (!btnSearch || !searchPanel || !buttonContainer) return;

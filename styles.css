@@ -254,4 +254,110 @@ mark.highlight {
     padding: 0 4px;
     border-radius: 3px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25) inset;
+} /* ← esta llave cierra correctamente el bloque anterior */
+
+/* Grid de imágenes estilo numpad con separación y tamaño uniforme */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(2, 1fr);    /* 2 filas */
+    gap: 24px; /* espacio entre imágenes */
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #000; /* borde negro como en la referencia */
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(255,215,0,0.25);
+}
+.image-grid figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.image-grid figcaption {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #ffd700; /* dorado */
+  font-weight: bold;
+  text-align: center;
+}
+/* Layout con imagen a la derecha estilo limpio */
+.content-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+/* Sección de texto a la izquierda */
+.steps-section {
+  flex: 2;
+  min-width: 0;
+}
+
+/* Imagen grande a la derecha */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.big-image {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.image-grid a img {
+  cursor: pointer;
+}
+/* Lista detallada de pasos */
+.detailed-steps {
+  margin: 20px auto;
+  padding-left: 24px;
+  max-width: 800px;
+}
+
+.detailed-steps li {
+  margin-bottom: 20px;   /* separación entre cada punto */
+  padding: 12px;         /* espacio interno */
+  line-height: 1.6;      /* más legible */
+  background: rgba(255, 215, 0, 0.08); /* fondo suave dorado */
+  border-left: 4px solid #ffd700;      /* línea dorada a la izquierda */
+  border-radius: 6px;
+}
+/* Lista detallada de pasos */
+.detailed-steps {
+  margin: 20px auto;
+  padding-left: 24px;
+  max-width: 800px;
+}
+
+.detailed-steps li {
+  margin-bottom: 20px;   /* separación entre cada punto */
+  padding: 12px;         /* espacio interno */
+  line-height: 1.6;      /* más legible */
+  background: rgba(255, 215, 0, 0.08); /* fondo suave dorado */
+  border-left: 4px solid #ffd700;      /* línea dorada a la izquierda */
+  border-radius: 6px;
 }
