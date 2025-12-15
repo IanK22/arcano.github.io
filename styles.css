@@ -361,3 +361,52 @@ mark.highlight {
   border-left: 4px solid #ffd700;      /* línea dorada a la izquierda */
   border-radius: 6px;
 }
+/* Estilo exclusivo para el título Espinaca */
+.espinaca-title {
+  text-align: center;   /* Centra el texto */
+  font-size: 3em;       /* Lo hace grande */
+  font-weight: bold;    /* Negritas */
+  color: #ffd700;       /* Dorado */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cilantro-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tomate-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.oregano-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.fresas-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.zanahoria-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
