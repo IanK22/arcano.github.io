@@ -91,8 +91,8 @@ hr {
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
-    margin-top: 0.5em; /* Añadir un pequeño margen arriba */
-    margin-bottom: 0.5em; /* Añadir un pequeño margen abajo */
+    margin-top: 1em; /* Añadir un pequeño margen arriba */
+    margin-bottom: 1em; /* Añadir un pequeño margen abajo */
 }
 
 .benefits-img {
@@ -303,7 +303,7 @@ mark.highlight {
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 /* Sección de texto a la izquierda */
@@ -312,12 +312,15 @@ mark.highlight {
   min-width: 0;
 }
 
-/* Imagen grande a la derecha */
-.image-section {
+/* Imagen grande a la derecha en elaboracion */
+.imageelab-section {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  width: 100%;
+  max-width: 360px;
+   margin-top: 230px;
 }
 
 .big-image {
@@ -403,6 +406,14 @@ mark.highlight {
   margin-bottom: 20px;
 }
 .zanahoria-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.titulo2-title {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
