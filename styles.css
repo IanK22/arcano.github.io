@@ -300,6 +300,9 @@ mark.highlight {
   text-align: center;
 }
 
+/* ==========
+   Layout de contenido
+   ========== */
 .content-layout {
   display: flex;
   flex-direction: row;
@@ -321,7 +324,7 @@ mark.highlight {
   justify-content: center;
   align-items: flex-start;
   max-width: 500px;
-  margin-top: 80px;
+  margin-top: 80px; /* reducido para evitar desbordes en móvil */
 }
 
 .big-image {
@@ -336,18 +339,19 @@ mark.highlight {
    Lista de pasos
    ========== */
 .detailed-steps {
-  margin: 20px auto;
+  margin: 30px auto;
   padding-left: 24px;
   max-width: 800px;
 }
 
 .detailed-steps li {
-  margin-bottom: 20px;
-  padding: 12px;
-  line-height: 1.6;
+  margin-bottom: 28px;
+  padding: 14px;
+  line-height: 1.7;
   background: rgba(255, 215, 0, 0.08);
   border-left: 4px solid var(--gold);
   border-radius: 6px;
+  font-size: 1.05em;
 }
 
 /* ==========
@@ -366,6 +370,10 @@ mark.highlight {
   color: var(--gold);
   margin: 20px 0;
 }
+
+/* ==========
+   Sección info
+   ========== */
 .info-section {
   display: flex;
   align-items: center;
@@ -383,8 +391,8 @@ mark.highlight {
 
 .info-text h2 {
   color: var(--gold);
-  font-size: 2em;
-  margin-bottom: 16px;
+  font-size: 2.2em;
+  margin-bottom: 20px;
 }
 
 .info-text p {
@@ -405,20 +413,10 @@ mark.highlight {
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
-.info-text h2 { 
-    font-size: 2.2em; 
-    margin-bottom: 20px; 
-}
-/* ====== Sección de pasos del huerto casero ====== */
-.titulo2-title {
-  text-align: center;
-  font-size: 2.4em;
-  font-weight: bold;
-  color: var(--gold); /* ya definido en tu root */
-  margin: 20px 0 30px;
-}
 
-/* Introducción breve */
+/* ==========
+   Intro
+   ========== */
 .intro-text {
   font-size: 1.1em;
   line-height: 1.6;
@@ -426,48 +424,9 @@ mark.highlight {
   text-align: justify;
 }
 
-/* Lista de pasos con más espacio */
-.detailed-steps {
-  margin: 30px auto;
-  padding-left: 24px;
-  max-width: 800px;
-}
-
-.detailed-steps li {
-  margin-bottom: 28px;   /* más separación entre pasos */
-  padding: 14px;         /* espacio interno */
-  line-height: 1.7;      /* más legible */
-  background: rgba(255, 215, 0, 0.08);
-  border-left: 4px solid var(--gold);
-  border-radius: 6px;
-  font-size: 1.05em;
-}
-
-.imageelab-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 100px;
-  margin-top: 500px;
-}
-
-.imageelab-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 100%;
-  margin-top: 400px; /* más abajo */
-}
-
-.big-image {
-  width: 500px;
-  height: 500px;  
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
+/* ==========
+   Botón volver
+   ========== */
 .back-button-container {
   margin-top: 12px;
   margin-left: 16px;
@@ -477,10 +436,10 @@ mark.highlight {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 48px;              
+  width: 48px;
   height: 48px;
   background-color: rgba(255,255,255,0.04);
-  border: 2px solid var(--gold);            
+  border: 2px solid var(--gold);
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -498,9 +457,13 @@ mark.highlight {
 }
 
 .arrow-icon {
-  width: 20px;   /* tamaño de la flecha dentro del cuadrado */
+  width: 20px; /* tamaño de la flecha dentro del cuadrado */
   height: auto;
 }
+
+/* ==========
+   Footer
+   ========== */
 footer {
   background-color: var(--bg3);
   color: var(--text);
@@ -509,5 +472,129 @@ footer {
   font-size: 1.1em;
   border-top: 2px solid rgba(255, 215, 0, 0.2);
 }
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 1024px) {
+  /* Tablets */
+  .benefits-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .benefits-text, .benefits-img-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+
+  .info-section {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .info-img img,
+  .big-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .imageelab-section {
+    margin-top: 40px; /* menos espacio en tablet */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Celulares grandes */
+  h1 {
+    font-size: 2.2em;
+  }
+
+  body {
+    font-size: 17px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr; /* 1 columna */
+    gap: 16px;
+    max-width: 520px;
+  }
+
+  .benefits-section {
+    gap: 16px;
+  }
+
+  .info-text h2 {
+    font-size: 1.6em;
+  }
+
+  .info-text p {
+    font-size: 1.05em;
+    line-height: 1.6;
+  }
+
+  .big-image,
+  .info-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-layout {
+    gap: 28px;
+    margin-top: 36px;
+  }
+
+  .imageelab-section {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Celulares pequeños */
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .button-container,
+  .main-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .benefits-section {
+    margin: 16px 0;
+  }
+
+  .info-section {
+    padding: 20px;
+  }
+
+  .image-grid {
+    gap: 14px;
+    padding: 0 12px;
+  }
+
+  .big-image {
+    border-radius: 12px;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 20px 10px;
+  }
+}
+
 
 
