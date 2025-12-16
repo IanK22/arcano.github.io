@@ -1,287 +1,273 @@
+/* ==========
+   Variables
+   ========== */
+:root {
+  --bg1: #232946;
+  --bg2: #1a1a2e;
+  --bg3: #0f3460;
+  --gold: #ffd700;
+  --turquoise: #00adb5;
+  --text: #e0dede;
+  --shadow: rgba(0,0,0,0.4);
+}
+
+/* ==========
+   Base
+   ========== */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 body {
-    background: linear-gradient(135deg, #232946 0%, #1a1a2e 60%, #0f3460 100%);
-    color: #e0dede;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
 }
 
 h1 {
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 0.5em;
+  font-size: 3.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 hr {
-    border: none;
-    border-top: 2px solid #ffd700; /* dorado */
-    margin: 1em 0;
-}
-
-.button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 1em;
-    position: relative; /* permitir posicionamiento absoluto del panel dentro */
-    padding: 18px 12px;
-    min-height: 72px;
-    box-sizing: border-box;
-}
-
-.main-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex: 1;
-}
-
-.button-container .search-button {
-    margin-left: auto;
-}
-
-.button-container button {
-    padding: 0.5em 1em;
-    margin: 0.5em;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.big-button {
-    padding: 16px 32px;
-    font-size: 1.2em;
-    border-radius: 0;
-    border: 2px solid #ffd700;
-    background: #232946;
-    color: #ffd700;
-    cursor: pointer;
-}
-
-.search-button {
-    padding: 16px 32px;
-    font-size: 1.2em;
-    border-radius: 20px;
-    border: 2px solid #ffd700;
-    background: #232946;
-    color: #ffd700;
-    cursor: pointer;
+  border: none;
+  border-top: 2px solid var(--gold);
+  margin: 1em 0;
 }
 
 .limited-width {
-    max-width: 80%; /* Límite de ancho para el contenido principal */
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
-.benefits-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+/* ==========
+   Botonera
+   ========== */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0 20px;
+  position: relative; /* permite posicionar el panel dentro */
+  padding: 18px 12px;
+  min-height: 72px;
+  box-sizing: border-box;
 }
 
-.benefits-text {
-    flex: 1;           /* El texto ocupa 1 parte del espacio */
-    max-width: 50%;    /* Limita el texto a un 50% del contenedor */
-    text-align: left;
-    padding-right: 16px; /* Espacio adicional a la derecha para no sobrepasar la imagen */
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex: 1;
 }
 
-.benefits-img-container {
-    flex: 1;           /* La imagen ocupa 1 parte del espacio */
-    display: flex;
-    justify-content: flex-end;
-    align-items: stretch;
-    margin-top: 1em; /* Añadir un pequeño margen arriba */
-    margin-bottom: 1em; /* Añadir un pequeño margen abajo */
+.button-container button {
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: box-shadow 200ms ease, transform 120ms ease, background-color 200ms ease;
+  will-change: transform, box-shadow;
+  outline: none;
 }
 
-.benefits-img {
-    width: 100%;        /* Se ajusta al contenedor */
-    height: auto;       /* Mantiene proporción */
-    max-width: 400px;   /* Tamaño máximo recomendado */
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    object-fit: cover;
+.big-button,
+.search-button {
+  padding: 16px 32px;
+  font-size: 1.2em;
+  background: var(--bg1);
+  color: var(--gold);
+  border: 2px solid var(--gold);
 }
 
-/* efectos interactivos para botones */
-.button-container .big-button,
-.button-container .search-button {
-    transition: box-shadow 200ms ease, transform 120ms ease, background-color 200ms ease;
-    will-change: transform, box-shadow;
-    outline: none;
-}
+.big-button { border-radius: 0; }
+.search-button { border-radius: 20px; margin-left: auto; }
 
-/* hover / focus (visual de "iluminado" y elevación) */
+/* Hover / Focus */
 .big-button:hover,
 .big-button:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255,215,0,0.12), 0 0 10px rgba(255,215,0,0.18);
-    background: linear-gradient(180deg, #2b2f54, #232946);
-    color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,215,0,0.12), 0 0 10px rgba(255,215,0,0.18);
+  background: linear-gradient(180deg, #2b2f54, var(--bg1));
+  color: #fff;
 }
 
 .search-button:hover,
 .search-button:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0,173,181,0.12), 0 0 10px rgba(0,173,181,0.18);
-    background: linear-gradient(180deg, #123244, #0f3460);
-    color: #e6ffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,173,181,0.12), 0 0 10px rgba(0,173,181,0.18);
+  background: linear-gradient(180deg, #123244, var(--bg3));
+  color: #e6ffff;
 }
 
-/* estado activo (clic) */
+/* Activo + accesible */
 .big-button:active,
 .search-button:active {
-    transform: translateY(0);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
-/* anillo visible para navegación por teclado (accesible) */
 .big-button:focus-visible {
-    box-shadow: 0 0 0 5px rgba(255,215,0,0.12), 0 12px 30px rgba(255,215,0,0.08);
+  box-shadow: 0 0 0 5px rgba(255,215,0,0.12), 0 12px 30px rgba(255,215,0,0.08);
 }
 
 .search-button:focus-visible {
-    box-shadow: 0 0 0 5px rgba(0,173,181,0.12), 0 12px 30px rgba(0,173,181,0.08);
+  box-shadow: 0 0 0 5px rgba(0,173,181,0.12), 0 12px 30px rgba(0,173,181,0,0.08);
 }
 
-/* asegurar scrollbar estable para evitar desplazamientos horizontales al cambiar contenido */
-html {
-    overflow-y: scroll;
-    scrollbar-gutter: stable; /* soporte adicional en navegadores que lo implementen */
-}
-
-/* panel de búsqueda: JS posicionará left/top/width para colocarlo a la izquierda del botón */
+/* ==========
+   Panel de búsqueda
+   ========== */
 .search-panel {
-    position: absolute;
-    /* top/left/width se fijarán desde JS */
-    display: flex;
-    gap: 8px;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 14px;
-    border-radius: 12px;
-    background: #232946;
-    border: 2px solid rgba(255,215,0,0.95);
-    color: #ffd700;
-    z-index: 40;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 18px rgba(255,215,0,0.03) inset;
-    transition: opacity 180ms ease, transform 160ms ease, visibility 180ms;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    box-sizing: border-box;
+  position: absolute; /* left/top/width se establecen por JS */
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--bg1);
+  border: 2px solid rgba(255,215,0,0.95);
+  color: var(--gold);
+  z-index: 40;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 18px rgba(255,215,0,0.03) inset;
+  transition: opacity 180ms ease, transform 160ms ease, visibility 180ms;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  box-sizing: border-box;
 }
 
-/* oculto sin afectar layout; animación sutil */
 .search-panel.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(6px) scale(0.98);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.98);
 }
 
-/* input dentro del cuadro: contraste claro sobre fondo oscuro */
 .search-panel input[type="text"] {
-    flex: 1 1 auto;
-    min-width: 40px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,215,0,0.08);
-    background: rgba(255,255,255,0.04);
-    color: #fff;
-    font-size: 0.98rem;
-    outline: none;
+  flex: 1 1 auto;
+  min-width: 40px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,215,0,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-size: 0.98rem;
+  outline: none;
 }
 
-/* mostrar y estilizar los botones pequeños dentro del cuadro */
-.search-panel .small-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: transform 120ms ease, box-shadow 160ms ease;
-}
-
-/* botón Buscar: estilo acorde al botón de búsqueda (acento turquesa) */
-#search-go {
-    background: #232946;
-    border: 2px solid #00adb5;
-    color: #00adb5;
-}
-#search-go:hover, #search-go:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,173,181,0.08), 0 0 10px rgba(0,173,181,0.12);
-}
-
-/* botón Cerrar: estilo acorde al botón principal (dorado) */
-#search-close {
-    background: #232946;
-    border: 2px solid #ffd700;
-    color: #ffd700;
-}
-#search-close:hover, #search-close:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(255,215,0,0.08), 0 0 10px rgba(255,215,0,0.12);
-}
-
-/* placeholder más visible */
 .search-panel input[type="text"]::placeholder {
-    color: rgba(230,230,230,0.6);
+  color: rgba(230,230,230,0.6);
 }
 
-/* foco visual del cuadro completo */
+.search-panel .small-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 120ms ease, box-shadow 160ms ease;
+}
+
+#search-go {
+  background: var(--bg1);
+  border: 2px solid var(--turquoise);
+  color: var(--turquoise);
+}
+
+#search-go:hover,
+#search-go:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,173,181,0.08), 0 0 10px rgba(0,173,181,0.12);
+}
+
+#search-close {
+  background: var(--bg1);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+
+#search-close:hover,
+#search-close:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255,215,0,0.08), 0 0 10px rgba(255,215,0,0.12);
+}
+
 .search-panel:focus-within {
-    box-shadow: 0 14px 36px rgba(0,0,0,0.55), 0 0 28px rgba(255,215,0,0.08);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.55), 0 0 28px rgba(255,215,0,0.08);
 }
 
-/* pequeño ajuste responsivo: reducir ancho en pantallas muy pequeñas */
 @media (max-width: 420px) {
-    .search-panel {
-        width: calc(100% - 40px);
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+  .search-panel {
+    width: calc(100% - 40px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-/* resaltado de búsqueda (por si no está añadido) */
+/* Resaltado de búsqueda */
 mark.highlight {
-    background: rgba(255, 215, 0, 0.28);
-    color: #111;
-    padding: 0 4px;
-    border-radius: 3px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25) inset;
-} /* ← esta llave cierra correctamente el bloque anterior */
+  background: rgba(255, 215, 0, 0.28);
+  color: #111;
+  padding: 0 4px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25) inset;
+}
 
-/* Grid de imágenes estilo numpad con separación y tamaño uniforme */
+/* ==========
+   Sección de beneficios
+   ========== */
+.benefits-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin: 24px 0;
+}
+
+.benefits-text {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+  padding-right: 16px;
+}
+
+.benefits-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  margin: 1em 0;
+}
+
+.benefits-img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* ==========
+   Grid imágenes
+   ========== */
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    grid-template-rows: repeat(2, 1fr);    /* 2 filas */
-    gap: 24px; /* espacio entre imágenes */
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.image-grid img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border: 2px solid #000; /* borde negro como en la referencia */
-    border-radius: 6px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.image-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(255,215,0,0.25);
-}
 .image-grid figure {
   display: flex;
   flex-direction: column;
@@ -289,52 +275,66 @@ mark.highlight {
   margin: 0;
 }
 
+.image-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.image-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(255,215,0,0.25);
+}
+
 .image-grid figcaption {
   margin-top: 8px;
   font-size: 1em;
-  color: #ffd700; /* dorado */
+  color: var(--gold);
   font-weight: bold;
   text-align: center;
 }
-/* Layout con imagen a la derecha estilo limpio */
+
 .content-layout {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 40px;
-  margin-top: 36px;
+  gap: 48px;
+  margin-top: 60px;
+  flex-wrap: wrap;
 }
 
-/* Sección de texto a la izquierda */
 .steps-section {
   flex: 2;
-  min-width: 0;
+  min-width: 300px;
 }
 
-/* Imagen grande a la derecha en elaboracion */
 .imageelab-section {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
-  width: 100%;
-  max-width: 360px;
-   margin-top: 230px;
+  max-width: 500px;
+  margin-top: 80px;
 }
 
 .big-image {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  border-radius: 8px;
+  width: 420px;
+  height: 420px;
   object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-.image-grid a img {
-  cursor: pointer;
-}
-/* Lista detallada de pasos */
+
+/* ==========
+   Lista de pasos
+   ========== */
 .detailed-steps {
   margin: 20px auto;
   padding-left: 24px;
@@ -342,82 +342,172 @@ mark.highlight {
 }
 
 .detailed-steps li {
-  margin-bottom: 20px;   /* separación entre cada punto */
-  padding: 12px;         /* espacio interno */
-  line-height: 1.6;      /* más legible */
-  background: rgba(255, 215, 0, 0.08); /* fondo suave dorado */
-  border-left: 4px solid #ffd700;      /* línea dorada a la izquierda */
+  margin-bottom: 20px;
+  padding: 12px;
+  line-height: 1.6;
+  background: rgba(255, 215, 0, 0.08);
+  border-left: 4px solid var(--gold);
   border-radius: 6px;
-}
-/* Lista detallada de pasos */
-.detailed-steps {
-  margin: 20px auto;
-  padding-left: 24px;
-  max-width: 800px;
 }
 
-.detailed-steps li {
-  margin-bottom: 20px;   /* separación entre cada punto */
-  padding: 12px;         /* espacio interno */
-  line-height: 1.6;      /* más legible */
-  background: rgba(255, 215, 0, 0.08); /* fondo suave dorado */
-  border-left: 4px solid #ffd700;      /* línea dorada a la izquierda */
-  border-radius: 6px;
-}
-/* Estilo exclusivo para el título Espinaca */
-.espinaca-title {
-  text-align: center;   /* Centra el texto */
-  font-size: 3em;       /* Lo hace grande */
-  font-weight: bold;    /* Negritas */
-  color: #ffd700;       /* Dorado */
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.cilantro-title {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.tomate-title {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.oregano-title {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.fresas-title {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.zanahoria-title {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+/* ==========
+   Títulos de plantas agrupados
+   ========== */
+.espinaca-title,
+.cilantro-title,
+.tomate-title,
+.oregano-title,
+.fresas-title,
+.zanahoria-title,
 .titulo2-title {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
-  color: #ffd700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  color: var(--gold);
+  margin: 20px 0;
 }
+.info-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin: 80px auto;
+  max-width: 1000px;
+  padding: 30px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-text h2 {
+  color: var(--gold);
+  font-size: 2em;
+  margin-bottom: 16px;
+}
+
+.info-text p {
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+.info-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.info-img img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.info-text h2 { 
+    font-size: 2.2em; 
+    margin-bottom: 20px; 
+}
+/* ====== Sección de pasos del huerto casero ====== */
+.titulo2-title {
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: bold;
+  color: var(--gold); /* ya definido en tu root */
+  margin: 20px 0 30px;
+}
+
+/* Introducción breve */
+.intro-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+/* Lista de pasos con más espacio */
+.detailed-steps {
+  margin: 30px auto;
+  padding-left: 24px;
+  max-width: 800px;
+}
+
+.detailed-steps li {
+  margin-bottom: 28px;   /* más separación entre pasos */
+  padding: 14px;         /* espacio interno */
+  line-height: 1.7;      /* más legible */
+  background: rgba(255, 215, 0, 0.08);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  font-size: 1.05em;
+}
+
+.imageelab-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100px;
+  margin-top: 500px;
+}
+
+.imageelab-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  margin-top: 400px; /* más abajo */
+}
+
+.big-image {
+  width: 500px;
+  height: 500px;  
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.back-button-container {
+  margin-top: 12px;
+  margin-left: 16px;
+}
+
+.back-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;              
+  height: 48px;
+  background-color: rgba(255,255,255,0.04);
+  border: 2px solid var(--gold);            
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.arrow-icon {
+  width: 20px;   /* tamaño de la flecha dentro del cuadrado */
+  height: auto;
+}
+footer {
+  background-color: var(--bg3);
+  color: var(--text);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.1em;
+  border-top: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+
