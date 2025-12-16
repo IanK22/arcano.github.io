@@ -59,6 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  if (btnBack) {
+  btnBack.addEventListener('click', function () {
+    var url = btnBack.getAttribute('data-link');
+    var target = btnBack.getAttribute('data-target') || '_self';
+    if (target === '_self') window.location.href = url;
+    else window.open(url, target);
+  });
+}
+
   // Mostrar/ocultar panel y posicionarlo
   if (btnSearch && searchPanel) {
     btnSearch.addEventListener('click', function () {
@@ -213,13 +222,4 @@ document.addEventListener('DOMContentLoaded', function () {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 });
-
-if (btnBack) {
-  btnBack.addEventListener('click', function () {
-    var url = btnBack.getAttribute('data-link');
-    var target = btnBack.getAttribute('data-target') || '_self';
-    if (target === '_self') window.location.href = url;
-    else window.open(url, target);
-  });
-}
 
